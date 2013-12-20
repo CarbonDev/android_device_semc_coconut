@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from coconut device
 $(call inherit-product, device/semc/coconut/coconut.mk)
@@ -28,3 +28,7 @@ PRODUCT_DEVICE := coconut
 PRODUCT_BRAND := SEMC
 PRODUCT_MANUFACTURER := SEMC
 PRODUCT_MODEL := Xperia Live with Walkman
+PRODUCT_PACKAGES += Apollo
+
+$(call inherit-product, device/semc/coconut/coconut.mk)
+$(call inherit-product-if-exists, vendor/semc/coconut/coconut-vendor.mk)
